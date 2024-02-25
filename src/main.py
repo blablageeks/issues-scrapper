@@ -3,6 +3,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get('/')
+@app.get("/")
 def health_check():
     return {"ping": "pong"}
