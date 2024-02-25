@@ -1,0 +1,10 @@
+.git*
+**/*.pyc
+.venv/
+.vscode/
+.idea/
+docker-compose.yml
+README.md
+LICENSE.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md

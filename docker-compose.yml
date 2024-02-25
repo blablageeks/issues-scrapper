@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  blablageeks:
+
+services:
+  api:
+    container_name: scrapping-tool
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - blablageeks
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongodb
+    image: mongo:7.0-jammy
+    restart: unless-stopped
+    networks:
+      - blablageeks
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: '${DB_USERNAME:-scrapper}'
+      MONGO_INITDB_ROOT_PASSWORD: '${DB_PASSWORD:-secret}'
